@@ -1,0 +1,81 @@
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+
+<div id="tooplate_menu">
+    {% block menu %}
+    <ul>
+        <li><a href="/adminhome/" class="current">Admin Home</a></li>
+        <li>
+            <a href="/adminhome/addcourse1">Add Course</a>
+        </li>
+        <li>
+            <a href="/adminhome/courselist1/">Course list</a>
+        </li>
+        <li>
+            <a href="/adminhome/addbatch/">Add Batch</a>
+        </li>
+        <li>
+            <a href="/adminhome/studentlist/">studentlist</a>
+        </li>
+        <li>
+            <a href="/adminhome/logout2/">logout</a>
+        </li>
+    </ul>  
+    {% endblock %}   	
+
+    <div class="cleaner"></div>
+</div> <!-- end of tooplate_menu -->
+
+{% block content %}
+<div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01">
+                       
+                 <span>Course Entry Form</span></div>
+                 <br>
+                 <form method="post">
+                    {% csrf_token %}
+                    <table border="1" align="center">
+                 <tr>
+                    <td>Course Name</td>
+                    <td>
+                        <input type="text" name="name" required>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Duration</td>
+                    <td>
+                        <input type="text" name="duration" required>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Fees</td>
+                    <td>
+                        <input type="text" name="fees" required>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Course Detial</td>
+                    <td>
+                       <textarea name="detail" rows="10" cols="25"></textarea>
+                    </td>
+                 </tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="add course">
+                 </td>
+                </table>
+                </form>
+                <span style="color: #0f82c0;">{{ msg }}</span>
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+{% endblock %}

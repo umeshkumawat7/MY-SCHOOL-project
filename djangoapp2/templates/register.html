@@ -1,0 +1,84 @@
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+
+{% block content %}
+    <div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01">
+                      <span>{{ msg }}</span>
+                      <br>  
+                 <span>Registration Form</span></div>
+                <form method="post">
+                    {% csrf_token %}
+                <table  border="1" align="center">
+                <tr>
+                    <td>Full name*</td>
+                    <td>
+                    <input type="text" name="fnm" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dob*</td>
+                    <td>
+                    <input type="date" name="dob" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender*</td>
+                    <td>
+                    <input type="radio" name="gender" value="male" required>male
+                    <input type="radio" name="gender" value="female" required>female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address*</td>
+                    <td>
+                    <textarea name="address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>City*</td>
+                    <td>
+                     <select name="city">
+                        <option value="0">Select City</option>
+                        <option value="1">Indore</option>
+                        <option value="2">Bhopal</option>
+                        <option value="3">Dewas</option>
+                        <option value="4">Ujjain</option>
+                     </select>
+                  
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email ID*</td>
+                    <td>
+                    <input type="email" name="emailid" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password*</td>
+                    <td>
+                    <input type="password" name="pwd" required>
+                    </td>
+                </tr>
+                <tr>
+                <td colspan="2" align="center">
+                <input type="submit" value="create profile">
+                </td>
+            </tr>
+            </table>
+        </form>
+            
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+{% endblock %}

@@ -1,0 +1,72 @@
+<!--extends inherit karke rkhta hai-->
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+<div id="tooplate_menu">
+    {% block menu %}
+    <ul>
+        
+        <li><a href="/studenthome/" class="current">Student Home</a></li>
+        <li><a href="/studenthome/courselist3/">Course List</a></li>
+    
+        <li><a href="/studenthome/batchlist1/">New batches</a></li>
+        
+        <li>
+            <a href="/studenthome/logout1/">logout</a>
+        </li>
+    </ul>  
+    {% endblock %}   	
+
+    <div class="cleaner"></div>
+</div> <!-- end of tooplate_menu -->
+
+
+{% block content %}
+    <div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01"align="right">
+                   
+                 <span>____Batch List____</span></div>
+                 <br>
+                 <table border="1" align="right" bgcolor="teal">
+                    <tr>
+                        <th style="color:black;font-size:14px;">batch no</th>
+                        <th style="color:black;font-size:14px;">Course Name</th>
+                        <th style="color:black;font-size:14px;">Duration</th>
+                        <th style="color:black;font-size:14px;">Fees</th>
+                        <th style="color:black;font-size:14px;">start date</th>
+                        <th style="color:black;font-size:14px;">Batch time</th>
+                        <th style="color:black;font-size:14px;">faculty name</th>
+                        <th style="color:black;font-size:14px;">option</th>
+                        
+                        
+                    </tr>
+                
+                    {% for r in res %}
+                    <tr>
+                        <th style="color:black;font-size:14px;" >{{ r.batchid }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.name }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.duration }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.fees }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.startdate }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.batchtime }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.facultyname }}</th>
+                        <th style="color:black;font-size:14px;"><a href="/studenthome/admission/?batchid={{ r.batchid }}">select batch</a></th>
+                       
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+        
+    </div> <!-- end of main -->
+    {% endblock %}

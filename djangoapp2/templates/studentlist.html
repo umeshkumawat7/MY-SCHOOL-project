@@ -1,0 +1,72 @@
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+
+<div id="tooplate_menu">
+    {% block menu %}
+    <ul>
+        <li><a href="/adminhome/" class="current">Admin Home</a></li>
+        <li>
+            <a href="/adminhome/addcourse1">Add Course</a>
+        </li>
+        <li>
+            <a href="/adminhome/courselist1/">Course List</a>
+        </li>
+        <li>
+            <a href="/adminhome/addbatch/">Add Batch</a>
+        </li>
+        <li>
+            <a href="/adminhome/studentlist/">Add Batch</a>
+        </li>
+        <li>
+            <a href="/adminhome/logout2/">logout</a>
+        </li>
+    </ul>  
+    {% endblock %}   	
+
+    <div class="cleaner"></div>
+</div> <!-- end of tooplate_menu -->
+
+{% block content %}
+<div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01" >
+                       
+                 <span>Student List</span></div>
+                 <form method="post" >
+                    <table border="1" align="center" >
+                 <tr>
+                    <th>sno</th>
+                    <th>fulll Name</th>
+                    <th>DOB</th>
+                    <th>gender</th>
+                    <th>address</th>
+                    <th>city</th>
+                    <th>emailid</th>
+                 </tr>
+                 {% for r in res %}
+                 <tr>
+                    <td>{{ r.sno}}</td>
+                    <td>{{ r.fnm }}</td>
+                    <td>{{ r.dob }}</td>
+                    <td>{{ r.gender }}</td>
+                    <td>{{ r.address }}</td>
+                    <td>{{ r.city}}</td>
+                    <td>{{ r.emailid }}</td>
+                    
+                 </tr>
+                 {% endfor %}
+                </table>
+                </form>
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+{% endblock %}

@@ -1,0 +1,61 @@
+<!--extends inherit karke rkhta hai-->
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+<div id="tooplate_menu">
+    {% block menu %}
+    <ul>
+       
+        <li><a href="/adminhome/" class="current">Admin Home</a></li>
+        <li><a href="/adminhome/addcourse/">Add Course</a></li>
+        <li><a href="/adminhome/courselist1/">Course List</a></li>
+        <li><a href="/adminhome/addbatch/">Add Batch</a></li>
+        <li>
+            <a href="/adminhome/logout2/">logout</a>
+        </li>
+        
+    </ul>  
+    {% endblock %}  	
+    <div class="cleaner"></div>
+</div> <!-- end of tooplate_menu -->
+
+{% block content %}
+    <div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01"align="right">
+                   
+                 <span>____Course List____</span></div>
+                 <br>
+                 <table border="1" align="right" bgcolor="teal">
+                    <tr>
+                        <th style="color:black;font-size:14px;">S.No.</th>
+                        <th style="color:black;font-size:14px;">Course Name</th>
+                        <th style="color:black;font-size:14px;">Duration</th>
+                        <th style="color:black;font-size:14px;">Fees</th>
+                        <th style="color:black;font-size:14px;">Option</th>
+                    </tr>
+                
+                    {% for r in res %}
+                    <tr>
+                        <th style="color:black;font-size:14px;" >{{ r.courseid }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.name }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.duration }}</th>
+                        <th style="color:black;font-size:14px;">{{ r.fees }}</th>
+                        <th><a href="/adminhome/editcourse/?courseid={{ r.courseid }}">Edit</a></th>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+        
+    </div> <!-- end of main -->
+    {% endblock %}

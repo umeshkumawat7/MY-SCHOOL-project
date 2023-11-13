@@ -1,0 +1,53 @@
+<!--extends inherit karke rkhta hai-->
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+<!-- <ul>
+    <li><a href="/courselist2/" class="current">Home</a></li>
+    <li><a href="/login/">login</a></li>
+    <li><a href="/register/">Register</a></li>
+     <li class="last"><a href="#">Contact</a></li>
+</ul>   -->
+{% block content %}
+    <div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01">
+                   
+                 <span>Course List</span></div>
+                 <br>
+                 <table border="1" align="center">
+                    <tr>
+                        <th>course id</th>
+                        <th>course name</th>
+                        <th>duration</th>
+                        <th>fees</th>
+                        <th>course img</th>
+                        
+                    </tr>
+                
+                    {% for r in res %}
+                    <tr>
+                        <th>{{ r.courseid }}</th>
+                        <th>{{ r.name }}</th>
+                        <th>{{ r.duration }}</th>
+                        <th>{{ r.fees }}</th>
+                        <td>
+                            <img src="{{ media_url }}{{ r.courseicon }}" height="80" width="120">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+        
+    </div> <!-- end of main -->
+    {% endblock %}

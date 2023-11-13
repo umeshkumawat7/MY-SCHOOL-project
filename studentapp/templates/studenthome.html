@@ -1,0 +1,43 @@
+{% extends 'master_template.html' %}
+{% load static %}
+{% block slider %}
+{% endblock %}
+
+<div id="tooplate_menu">
+    {% block menu %}
+    <ul>
+        <li>
+            <a href="/studenthome/" class="current">Student Home</a>
+        </li>
+        <li>
+            <a href="/studenthome/courselist3/">couurse list</a>
+        </li>
+        <li>
+            <a href="/studenthome/batchlist1/">New batches</a>
+        </li>
+        <li>
+            <a href="/studenthome/logout1/">logout</a>
+        </li>
+    </ul>    
+    {% endblock %}   	
+
+    <div class="cleaner"></div>
+</div> <!-- end of tooplate_menu -->
+
+{% block content %}
+<div id="tooplate_main_top"></div>        
+    <div id="tooplate_main">
+        
+    	 <div class="col_w900 col_w900_last">
+<div class="col_w580 float_l" style="height:400px">
+                    <div class="con_tit_01">
+                       
+                 <span>Welcome {{ role }} email id-{{ emailid }} </span></div>
+                    <div class="cleaner"></div>
+           </div>
+    
+                
+			</div>
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+{% endblock %}
