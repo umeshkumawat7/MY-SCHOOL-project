@@ -56,14 +56,14 @@ def courselist1(request):
 def editcourse(request):
     if request.method=="GET":
         courseid=request.GET.get("courseid")
-        rs=adminmodel.course.objects.filter(courseid=courseid)
+        rs=adminmodel.course1.objects.filter(courseid=courseid)
         return render(request,"editcourse.html",{'rs':rs})
     else:
         courseid=request.POST.get("courseid")
         duration=request.POST.get("duration")
         fees=request.POST.get("fees")
         detail=request.POST.get("detail")
-        adminmodel.course.objects.filter(courseid=courseid).update(duration=duration,fees=fees,details=detail)
+        adminmodel.course1.objects.filter(courseid=courseid).update(duration=duration,fees=fees,details=detail)
         return redirect("/adminhome/courselist1/")
     
 def addbatch(request):
